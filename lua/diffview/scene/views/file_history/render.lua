@@ -89,7 +89,7 @@ local function render_entries(panel, parent, entries, updating)
     end
 
     if entry.status then
-      comp:add_text(entry.status, hl.get_git_hl(entry.status))
+      comp:add_text("", hl.get_git_hl(entry.status))
     else
       comp:add_text("-", "DiffviewNonText")
     end
@@ -123,11 +123,11 @@ local function render_entries(panel, parent, entries, updating)
         dels = { tostring(entry.stats.deletions), "DiffviewFilePanelDeletions" }
       end
 
-      comp:add_text(" | ", "DiffviewNonText")
+      comp:add_text(" ┃ ", "DiffviewNonText")
       comp:add_text(unpack(adds))
       comp:add_text(string.rep(" ", max_len_stats - (#adds[1] + #dels[1])))
       comp:add_text(unpack(dels))
-      comp:add_text(" |", "DiffviewNonText")
+      comp:add_text(" ┃", "DiffviewNonText")
     end
 
     if entry.commit.hash then
