@@ -13,13 +13,13 @@ local function render_file(comp, show_path, depth)
 
   -- Add custom icons
   if file.status == "M" then
-    comp:add_text("󰣕" .. "  ", hl.get_git_hl(file.status))
+    comp:add_text("פֿ" .. "   ", hl.get_git_hl(file.status))
   elseif file.status == "?" then
-    comp:add_text("" .. "  ", hl.get_git_hl(file.status))
+    comp:add_text("󱜸" .. "   ", hl.get_git_hl(file.status))
   elseif file.status == "D" then
-    comp:add_text("󰍶" .. "  ", hl.get_git_hl(file.status))
+    comp:add_text("󰚃" .. "   ", hl.get_git_hl(file.status))
   elseif file.status == "A" then
-    comp:add_text("󰸼" .. "  ", hl.get_git_hl(file.status))
+    comp:add_text("󰸼" .. "   ", hl.get_git_hl(file.status))
   else
     comp:add_text(file.status .. " ", hl.get_git_hl(file.status))
   end
